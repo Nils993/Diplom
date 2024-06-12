@@ -1,0 +1,127 @@
+.promo {
+  padding-bottom: 80px;
+  background: rgb(20, 20, 20);
+  &__heading {
+    color: var(--white);
+    font-size: clamp(38px, 5vw, 60px);
+    font-weight: 600;
+    line-height: clamp(40px, 5vw, 62px);
+    grid-column-start: 1;
+    grid-column-end: span 2;
+    margin-bottom: 40px;
+  }
+  &__discript {
+    max-width: 300px;
+    @include text-styles(var(--white), 300);
+    grid-column-start: 3;
+  }
+}
+.collection {
+  margin-top: 70px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.slider-container {
+  grid-column: 1/2;
+  align-self: end;
+}
+.slider {
+  max-width: 450px;
+  display: flex;
+  justify-content: center;
+  max-height: 255px;
+  background: var(--darkGreen);
+  transition: transform 0.3s ease;
+  margin-right: 64px;
+}
+
+.arrow {
+  margin-top: 20px;
+  background: rgb(29, 31, 31);
+  border: 1px solid var(--white);
+  border-radius: 8px;
+  padding: 14px 17px;
+  color: var(--white);
+  &:hover {
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    stroke-opacity: 0.5;
+  }
+
+  &-right {
+    margin-left: 12px;
+  }
+}
+.banner {
+  width: 100%;
+  grid-column: 2/4;
+  grid-row: 2/3;
+  &-img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 1000px) {
+  .slider-container {
+    margin-bottom: 40px;
+  }
+  .slider {
+    margin-right: 20px;
+  }
+
+  .promo__heading {
+    margin-bottom: 60px;
+    grid-column: 1/4;
+  }
+  .promo__discript {
+    grid-row: 2/3;
+    padding-top: 70px;
+  }
+
+  .banner {
+    grid-row: 3/4;
+    grid-column: 1/4;
+  }
+}
+@media (max-width: 750px) {
+  .slider {
+    margin-right: 0;
+  }
+  .collection {
+    grid-template-columns: 1fr;
+  }
+  .promo__discript {
+    grid-row: 3/4;
+    grid-column: 1/2;
+    justify-self: end;
+    padding-top: 0px;
+    margin-bottom: 40px;
+  }
+  .banner {
+    grid-row: 4/5;
+  }
+}
+
+@media (max-width: 400px) {
+  .slider {
+    & img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .banner {
+    height: 410px;
+
+    &-img {
+      object-fit: cover;
+      height: 100%;
+    }
+  }
+
+  .promo__discript {
+    padding-right: 25px;
+  }
+  .collection {
+    margin-top: 0px;
+  }
+}

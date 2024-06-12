@@ -1,0 +1,12 @@
+@mixin text-styles($text-color, $fw) {
+  color: $text-color;
+  font-size: 14px;
+  font-weight: $fw;
+  line-height: 18px;
+}
+@mixin titel-style() {
+  color: var(--darkGreen);
+  font-size: clamp(32px, 5vw, 40px);
+  line-height: clamp(40px, 5vw, 44px);
+  font-weight: 600;
+}
