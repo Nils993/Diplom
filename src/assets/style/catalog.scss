@@ -13,6 +13,8 @@
   }
   &-item {
     margin-top: 90px;
+    padding: 10px;
+    cursor: pointer;
     &__name {
       white-space: nowrap;
       overflow: hidden;
